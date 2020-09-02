@@ -2,7 +2,7 @@
   "name": "electron-react-ts",
   "version": "1.0.0",
   "description": "New Electron app",
-  "main": "dist/main.js",
+  "main": "./dist/main.js",
   "scripts": {
     "dev:electron": "NODE_ENV=development webpack --config webpack.electron.config.js --mode development && electron .",
     "dev:react": "NODE_ENV=development webpack-dev-server --config webpack.react.config.js --mode development",
@@ -17,10 +17,15 @@
   "license": "ISC",
   "build": {
     "files": [
-      "dist/**/*",
+      "dist/",
+      "node_modules/",
       "package.json"
     ],
-    "appId": "com.example.app"
+    "productName": "example",
+    "appId": "com.example.app",
+    "directories": {
+      "output": "dist"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
